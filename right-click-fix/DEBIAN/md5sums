@@ -1,0 +1,4 @@
+ad3277e9adcfd9e2b0f98ef7ef7f154e  DEBIAN/control
+d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
+c40021acd1870baaaaf33a5b745a07ad  usr/bin/right-click-fix
+50d0ff1ec49e9e9bd42261c5022ae626  etc/xdg/autostart/right-click-fix.desktop

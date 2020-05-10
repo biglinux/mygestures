@@ -1,0 +1,4 @@
+drawing/drawing-backing.o: drawing/drawing-backing.c \
+ /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

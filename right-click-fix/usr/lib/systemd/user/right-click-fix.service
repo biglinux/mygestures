@@ -1,0 +1,13 @@
+[Unit]
+Description=Solve mouse right click problem
+ConditionUser=!root
+
+[Service]
+SystemCallArchitectures=native
+Type=simple
+Restart=always
+ExecStart=/usr/bin/right-click-fix
+
+[Install]
+WantedBy=default.target
+

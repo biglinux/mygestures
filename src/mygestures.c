@@ -78,17 +78,7 @@ Mygestures *mygestures_new()
 }
 
 static void mygestures_load_configuration(Mygestures *self)
-{
-
-	if (self->custom_config_file)
-	{
-		configuration_load_from_file(self->gestures_configuration,
-									 self->custom_config_file);
-	}
-	else
-	{
-		configuration_load_from_defaults(self->gestures_configuration);
-	}
+{	return 0;
 }
 
 static void mygestures_grab_device(Mygestures *self, char *device_name)

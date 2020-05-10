@@ -1,0 +1,3 @@
+actions.o: actions.c /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+while :; do
+
+    if [ "$(ps -e | grep flameshot)" = "" ]; then
+        /usr/bin/right-click-fix
+        killall /usr/bin/right-click-fix
+    fi
+    
+    sleep 0.2
+
+done
+

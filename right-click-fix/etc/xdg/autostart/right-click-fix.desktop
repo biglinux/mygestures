@@ -1,5 +1,19 @@
 [Desktop Entry]
-Exec=/usr/bin/right-click-fix
+Comment[pt_BR]=
+Comment=
+Exec=/usr/bin/right-click-fix-loop
+GenericName[pt_BR]=
+GenericName=
+Icon=
+MimeType=
+Name[pt_BR]=Right Click Fix
 Name=Right Click Fix
+Path=
+StartupNotify=true
 Terminal=false
+TerminalOptions=
 Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

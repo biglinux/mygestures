@@ -1,0 +1,4 @@
+drawing/drawing-brush.o: drawing/drawing-brush.c \
+ /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

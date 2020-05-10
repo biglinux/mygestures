@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+package_name=right-click-fix
+case "$1" in
+  install)
+
+  ln -s /usr/lib/systemd/user/right-click-fix.service /etc/systemd/user/default.target.wants/right-click-fix.service
+
+;;
+esac
+exit 0

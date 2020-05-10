@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+package_name=right-click-fix
+case "$1" in
+  remove)
+  
+  rm -f /etc/systemd/user/default.target.wants/right-click-fix.service
+
+    ;;
+  purge)
+
+  rm -f /etc/systemd/user/default.target.wants/right-click-fix.service
+
+;;
+esac
+exit 0

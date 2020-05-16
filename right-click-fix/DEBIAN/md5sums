@@ -1,8 +1,8 @@
 d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
 82ed224964f3fa1801eb809fdc6f6230  DEBIAN/postrm
 45353e692c8cbe9f5b4d479dbd5870aa  DEBIAN/preinst
-53ed9ea9fb0b12fb72924013583c5075  DEBIAN/control
+d53efcc61970bcb47236a7f70b19ce50  DEBIAN/control
 81fa2a73f99ab84599d4215f2d5d9b11  usr/bin/right-click-fix
-152094b2417d32b2ba2f6e5811ef268f  usr/bin/right-click-fix-loop
+c5e94c97b18b48a6e5194730adc95113  usr/bin/right-click-fix-loop
 30c58f6eb08652dfc36a7336eb634c38  usr/lib/systemd/user/right-click-fix.service
 8e91b6cf9c86d2da2fdc043a730e1667  etc/xdg/autostart/right-click-fix.desktop

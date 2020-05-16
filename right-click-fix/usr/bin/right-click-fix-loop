@@ -7,6 +7,6 @@ while :; do
 
     fi
     killall /usr/bin/right-click-fix    
-
+    sleep 0.3
 done
 

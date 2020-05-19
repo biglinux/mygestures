@@ -1,9 +1,9 @@
 Package: right-click-fix
-Version: 1.0.0-2big1
+Version: 1.0.0-2big3
 Depends:
 Architecture: all
 Maintainer: Bruno Goncalves
 Section: admin
 Priority: optional
-Installed-Size:124
+Installed-Size:120
 Description: This is a fork of mygestures that disables the gesture options, only emulates the right mouse button, to solve an old problem of the right mouse button in Linux, which clicks once when pressing the button and once when releasing the button.

@@ -2,11 +2,10 @@
 
 while :; do
 
-    if [ "$(ps -e | grep flameshot)" = "" ]; then
         /usr/bin/right-click-fix
         if [ "$?" != "0" ]; then
             exit 0
         fi
-    fi
+        sleep 1
 done
 

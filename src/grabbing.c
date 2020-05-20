@@ -239,9 +239,9 @@ void grabbing_end_movement(Grabber *self, int new_x, int new_y,
 
 			printf("\nEmulating click\n");
 
-			//grabbing_xinput_grab_stop(self);
+			grabbing_xinput_grab_stop(self);
 			mouse_click(self->dpy, self->button, new_x, new_y);
-			//grabbing_xinput_grab_start(self);
+			grabbing_xinput_grab_start(self);
             
             
 		}
@@ -260,16 +260,7 @@ void grabber_set_device(Grabber *self, char *device_name)
 {
 	self->devicename = device_name;
 
-	if (strcasecmp(self->devicename, "SYNAPTICS") == 0)
-	{
-		self->synaptics = 1;
-		self->delta_min = 200;
-	}
-	else
-	{
-		self->synaptics = 0;
-		self->delta_min = 30;
-	}
+
 }
 
 void grabber_set_brush_color(Grabber *self, char *brush_color)
@@ -281,14 +272,6 @@ Grabber *grabber_new(char *device_name, int button)
 {
 
 	Grabber *self = malloc(sizeof(Grabber));
-	bzero(self, sizeof(Grabber));
-
-	self->fine_direction_sequence = malloc(sizeof(char *) * 30);
-	self->rought_direction_sequence = malloc(sizeof(char *) * 30);
-
-	grabber_set_device(self, device_name);
-	grabber_set_button(self, button);
-
 	return self;
 }
 
@@ -307,7 +290,6 @@ void grabber_xinput_loop(Grabber *self, Configuration *conf)
 
 	XEvent ev;
 
-	grabber_xinput_open_devices(self, False);
 	grabbing_xinput_grab_start(self);
 
 	//while (!self->shut_down)
@@ -323,17 +305,15 @@ void grabber_xinput_loop(Grabber *self, Configuration *conf)
 			switch (ev.xcookie.evtype)
 			{
 
-
 			case XI_ButtonPress:
 				data = (XIDeviceEvent *)ev.xcookie.data;
-				grabbing_start_movement(self, data->root_x, data->root_y);
 
 				char *device_name = get_device_name_from_event(self, data);
 
 				grabbing_xinput_grab_stop(self);
 				grabbing_end_movement(self, data->root_x, data->root_y,
 									  device_name, conf);
-                break;
+                //break;
 			}
 
 		//}
@@ -348,14 +328,8 @@ void grabber_loop(Grabber *self, Configuration *conf)
 
 	grabber_init_drawing(self);
 
-	if (self->synaptics)
-	{
-		grabber_synaptics_loop(self, conf);
-	}
-	else
-	{
-		grabber_xinput_loop(self, conf);
-	}
+	grabber_xinput_loop(self, conf);
+
 
 	printf("Grabbing loop finished for device '%s'.\n", self->devicename);
 }
@@ -365,8 +339,3 @@ char *grabber_get_device_name(Grabber *self)
 	return self->devicename;
 }
 
-void grabber_finalize(Grabber *self)
-{
-
-	return;
-}

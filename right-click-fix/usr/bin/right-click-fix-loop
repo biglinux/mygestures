@@ -1,5 +1,10 @@
 #!/bin/bash
 
+
+if [ "$(systemd-detect-virt)" != "none" ]; then
+    exit
+fi
+
 while :; do
 
         /usr/bin/right-click-fix
